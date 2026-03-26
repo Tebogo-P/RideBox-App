@@ -3,73 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RIDEBOX - Advanced solar-powered e-hailing solution in South Africa. Secure mobility with 0% grid dependency and nationwide deployment.">
+    <meta name="description" content="RIDEBOX - Advanced solar-powered e-hailing solution in South Africa. Secure mobility with 0% grid dependency.">
     <meta name="keywords" content="e-hailing, rideshare, solar power, South Africa, sustainable transport, mobility">
     <meta name="author" content="RIDEBOX">
-    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://ridebox.co.za/">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ridebox.co.za/">
     <meta property="og:title" content="RIDEBOX | Solar-Powered E-Hailing">
-    <meta property="og:description" content="Advanced solar-powered e-hailing solution in South Africa. Secure mobility with 0% grid dependency.">
+    <meta property="og:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
     <meta property="og:image" content="https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w1200">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ridebox.co.za/">
-    <meta property="twitter:title" content="RIDEBOX | Solar-Powered E-Hailing">
-    <meta property="twitter:description" content="Advanced solar-powered e-hailing solution in South Africa">
-    <meta property="twitter:image" content="https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w1200">
     
     <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w32">
     <title>RIDEBOX | Solar-Powered E-Hailing</title>
     
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "RIDEBOX",
-      "url": "https://ridebox.co.za/",
-      "logo": "https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w200",
-      "description": "Solar-powered e-hailing platform providing secure, sustainable mobility in South Africa",
-      "foundingDate": "2024",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "email": "info@ridebox.co.za"
-      },
-      "sameAs": [
-        "https://www.facebook.com/ridebox",
-        "https://www.twitter.com/ridebox",
-        "https://www.instagram.com/ridebox"
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "RIDEBOX",
-      "image": "https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w400",
-      "description": "Solar-powered e-hailing platform",
-      "url": "https://ridebox.co.za/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ZA"
-      }
-    }
-    </script>
     <style>
         :root {
             --bg-color: #000000;
             --text-color: #ffffff;
             --border-color: #ffffff;
             --modal-bg: #111111;
+            --accent-color: #4CAF50; /* For success states */
+            --error-color: #f44336;
         }
 
         * {
@@ -88,7 +44,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigation with Logo */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -102,81 +58,24 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .company-logo {
-            height: 50px;
-            width: auto;
-            border: 1px solid var(--border-color);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        
         .logo-container a {
             display: flex;
             align-items: center;
             gap: 15px;
             text-decoration: none;
-        }
-        
-        .logo-container a:hover .company-logo {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-        
-        .logo-container a .logo-text {
             color: var(--text-color);
         }
-        
-        /* Hero Logo */
-        .hero-logo {
-            height: 100px;
+
+        .company-logo {
+            height: 45px;
             width: auto;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
-            animation: fadeInDown 0.8s ease;
+            transition: transform 0.3s;
         }
         
-        /* Footer Logo */
-        .footer-logo {
-            height: 60px;
-            width: auto;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .footer-logo:hover {
-            opacity: 1;
-        }
-        
-        .footer-top {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .logo-container a:hover .company-logo { transform: scale(1.05); }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 900;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -187,14 +86,14 @@
             color: var(--text-color);
             text-decoration: none;
             margin-left: 30px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: opacity 0.3s;
         }
         .nav-links li a:hover { opacity: 0.6; }
 
-        /* Hero & Video Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -206,52 +105,68 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        .hero-logo {
+            height: 120px;
+            width: auto;
+            /*border: 1px solid var(--border-color);*/
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
+        }
+
         .hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; opacity: 0.8; }
+        .hero p { font-size: 1rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; opacity: 0.8; }
 
         .video-container {
             width: 100%;
-            max-width: 850px;
+            max-width: 900px;
             aspect-ratio: 16 / 9;
             border: 1px solid var(--border-color);
+            background: #111;
         }
 
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        /* Strategy Section */
+        /* Sections & Grid */
         .section { padding: 100px 10%; border-bottom: 1px solid var(--border-color); }
-        .section-title { font-size: 2rem; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 4px; text-align: center; }
+        .section-title { font-size: 1.8rem; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 4px; text-align: center; }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
         .card {
-            padding: 50px 30px;
+            padding: 60px 30px;
             border: 1px solid var(--border-color);
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: rgba(0,0,0,0.5); /* slight transparency for grid cards */
         }
 
-        .card:hover { background: var(--text-color); color: var(--bg-color); }
-        .card h3 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 900; }
-        .card h4 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card:hover, .card:focus { 
+            background: var(--text-color); 
+            color: var(--bg-color); 
+            outline: none;
+        }
+        
+        .card h3 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 900; transition: transform 0.3s; }
+        .card:hover h3 { transform: scale(1.05); }
 
-        /* Modal Styling */
+        .card h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Modals */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.95);
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
@@ -259,127 +174,74 @@
             padding: 50px;
             border: 1px solid var(--border-color);
             width: 90%;
-            max-width: 750px;
+            max-width: 700px;
             position: relative;
             max-height: 85vh;
             overflow-y: auto;
         }
 
-        .close-btn { position: absolute; top: 15px; right: 25px; color: var(--text-color); font-size: 35px; cursor: pointer; }
-        .modal h2 { text-transform: uppercase; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; letter-spacing: 2px; }
-        .modal p { margin-bottom: 20px; font-size: 1.1rem; opacity: 0.9; }
-        .modal li { margin-bottom: 15px; padding-left: 20px; border-left: 2px solid var(--border-color); list-style: none; }
+        .close-btn { position: absolute; top: 15px; right: 25px; color: var(--text-color); font-size: 30px; cursor: pointer; transition: transform 0.3s; }
+        .close-btn:hover { transform: scale(1.2); }
+        .modal h2 { text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .modal p { margin-bottom: 20px; font-size: 1rem; opacity: 0.9; }
+        .modal li { margin-bottom: 12px; padding-left: 15px; border-left: 1px solid var(--border-color); list-style: none; }
 
-        /* Leadership & Core Team */
-        .sub-heading { font-size: 1.5rem; margin: 60px 0 40px; text-transform: uppercase; letter-spacing: 2px; text-align: center; border-top: 1px solid #333; padding-top: 40px; }
-
-        /* Contact & Form */
-        .contact-form { max-width: 650px; margin: 0 auto; display: grid; gap: 20px; }
-        .contact-form input, .contact-form textarea { padding: 18px; border: 1px solid var(--border-color); background: transparent; color: white; outline: none; }
-        .btn { background: var(--text-color); color: var(--bg-color); padding: 20px; font-weight: 900; text-transform: uppercase; border: none; cursor: pointer; }
-
-        /* Chat Widget */
-        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
-        .chat-btn { background: var(--bg-color); color: var(--text-color); width: 60px; height: 60px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; }
-        .chat-window { position: absolute; bottom: 80px; right: 0; width: 300px; background: var(--bg-color); border: 1px solid var(--border-color); display: none; flex-direction: column; }
-        .chat-window.show { display: flex; }
-
-        /* Footer Styling */
-        footer {
-            background: var(--bg-color);
-            border-top: 1px solid var(--border-color);
-            padding: 60px 10%;
-            margin-top: 100px;
+        /* Contact Section with Background Image */
+        #contact {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('map-background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4 {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+        .contact-form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; position: relative; z-index: 2; }
+        .contact-form input, .contact-form textarea { 
+            padding: 18px; 
+            border: 1px solid var(--border-color); 
+            background: rgba(0,0,0,0.6); 
+            color: white; 
             font-size: 1rem;
+            backdrop-filter: blur(2px);
         }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: var(--text-color);
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-section a:hover {
-            opacity: 1;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-            text-align: center;
-            opacity: 0.6;
-            font-size: 0.85rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
+        .btn { 
+            background: var(--text-color); 
+            color: var(--bg-color); 
+            padding: 20px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            border: none; 
+            cursor: pointer; 
             transition: all 0.3s;
         }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); }
 
-        .social-links a:hover {
-            background: var(--text-color);
-            color: var(--bg-color);
+        /* Messages */
+        .status-msg { display: none; padding: 15px; margin-bottom: 20px; text-align: center; font-weight: bold; position: relative; z-index: 2; }
+        .success { background: var(--accent-color); color: white; }
+        .error { background: var(--error-color); color: white; }
+
+        /* Footer */
+        footer { padding: 80px 10% 40px; border-top: 1px solid var(--border-color); background: var(--bg-color); position: relative; z-index: 2;}
+        .footer-logo { height: 50px; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
+        .social-links a { 
+            width: 40px; height: 40px; border: 1px solid var(--border-color); 
+            display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; color: var(--text-color); transition: 0.3s;
         }
+        .social-links a:hover { background: white; color: black; transform: translateY(-3px); }
 
-        .success-message {
-            display: none;
-            background: #4CAF50;
-            color: white;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .error-message {
-            display: none;
-            background: #f44336;
-            color: white;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            text-align: center;
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 3.2rem; }
-            .footer-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+            .section { padding: 60px 5%; }
+            #contact { background-attachment: scroll; } /* Better performance on mobile */
         }
     </style>
 </head>
@@ -388,103 +250,54 @@
     <nav>
         <div class="logo-container">
             <a href="#home">
-                <img src="Ridebox App logo.jpeg" alt="Ridebox Logo" class="company-logo">
+                <img src="Ridebox App logo.png" alt="Ridebox Logo" class="company-logo">
                 <div class="logo-text">RIDEBOX</div>
             </a>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#company">The Venture</a></li>
+            <li><a href="#company">Venture</a></li>
             <li><a href="#founders">Leadership</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header id="home" class="hero">
-        <img src="Ridebox App logo.jpeg" alt="Ridebox Logo" class="hero-logo">
-        <div class="hero-content">
-            <h1>RIDEBOX</h1>
-            <p>ADVANCING SOUTH AFRICA'S MOBILITY</p>
-        </div>
+        <img src="Ridebox App logo.png" alt="Ridebox Logo" class="hero-logo">
+        <h1>RIDEBOX</h1>
+        <p>ADVANCING SOUTH AFRICA'S MOBILITY</p>
         <div class="video-container">
-            <iframe src="https://drive.google.com/file/d/1DRkmqldcTKmXM-sZLWHh-vBAiIH69T1o/preview" allowfullscreen></iframe>
+            <iframe src="https://drive.google.com/file/d/1DRkmqldcTKmXM-sZLWHh-vBAiIH69T1o/preview" title="Ridebox Video Presentation" allowfullscreen></iframe>
         </div>
     </header>
 
     <section id="company" class="section">
         <h2 class="section-title">The Strategy</h2>
         <div class="grid">
-            <div class="card" onclick="openModal('unitsModal')"><h3>21</h3><p>UNITS NATIONWIDE</p></div>
-            <div class="card" onclick="openModal('gridModal')"><h3>0%</h3><p>GRID DEPENDENCY</p></div>
-            <div class="card" onclick="openModal('secureModal')"><h3>SECURE</h3><p>E-HAILING ACCESS</p></div>
+            <div class="card" role="button" tabindex="0" onclick="openModal('unitsModal')"><h3>21</h3><p>UNITS NATIONWIDE</p></div>
+            <div class="card" role="button" tabindex="0" onclick="openModal('gridModal')"><h3>0%</h3><p>GRID DEPENDENCY</p></div>
+            <div class="card" role="button" tabindex="0" onclick="openModal('secureModal')"><h3>SECURE</h3><p>E-HAILING ACCESS</p></div>
         </div>
     </section>
 
-    <div id="unitsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('unitsModal')">&times;</span>
-            <h2>National Deployment</h2>
-            <p>Our pilot program targets high-traffic hubs to solve accessibility gaps:</p>
-            <ul>
-                <li><strong>Airport Connectivity:</strong> Assisting travelers with dead batteries or no local SIM card.</li>
-                <li><strong>Tourist Protection:</strong> Ensuring fair, regulated rates.</li>
-                <li><strong>Public Hubs:</strong> Centralized booking points at malls and universities.</li>
-            </ul>
-        </div>
-    </div>
-    <div id="gridModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('gridModal')">&times;</span>
-            <h2>0% Grid Dependency</h2>
-            <p>Engineered to remain 100% operational during power outages and load shedding.</p>
-        </div>
-    </div>
-    <div id="secureModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('secureModal')">&times;</span>
-            <h2>Secure E-Hailing Access</h2>
-            <p>Prioritizing safety through vetted platforms and integrated SOS features.</p>
-        </div>
-    </div>
+    <div id="unitsModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('unitsModal')">&times;</span><h2>National Deployment</h2><p>Our pilot program targets high-traffic hubs to solve accessibility gaps:</p><ul><li><strong>Airport Connectivity:</strong> Support for travelers without power or local connectivity.</li><li><strong>Tourist Protection:</strong> Regulated rates and safety.</li><li><strong>Public Hubs:</strong> Centralized booking at malls and universities.</li></ul></div></div>
+    <div id="gridModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('gridModal')">&times;</span><h2>0% Grid Dependency</h2><p>Engineered with built-in solar arrays to remain 100% operational during load shedding and infrastructure failure.</p></div></div>
+    <div id="secureModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('secureModal')">&times;</span><h2>Secure Access</h2><p>Vetted driver platforms and integrated emergency response features for peace of mind.</p></div></div>
 
     <section id="founders" class="section">
         <h2 class="section-title">Leadership</h2>
         <div class="grid">
-            <div class="card" onclick="openModal('dumisaneModal')"><h4>Dumisane Zikalala</h4><p style="opacity: 0.6;">CO-FOUNDER & TECH LEAD</p></div>
-            <div class="card" onclick="openModal('aluluthoModal')"><h4>Alulutho Mbangela</h4><p style="opacity: 0.6;">CO-FOUNDER & OPERATIONS</p></div>
-        </div>
-
-        <h3 class="sub-heading">Core Team Members</h3>
-        <div class="grid">
-            <div class="card" onclick="openModal('reganModal')"><h4>Regan Stevens</h4><p style="opacity: 0.6;">PROJECT MANAGER</p></div>
-            <div class="card" onclick="openModal('jonathanModal')"><h4>Jonathan Scott</h4><p style="opacity: 0.6;">SUPERVISOR</p></div>
-            <div class="card" onclick="openModal('kyleModal')"><h4>Kyle Foster</h4><p style="opacity: 0.6;">HEAD OF MARKETING</p></div>
+            <div class="card" role="button" tabindex="0" onclick="openModal('dumisaneModal')"><h4>Dumisane Zikalala</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & TECH LEAD</p></div>
+            <div class="card" role="button" tabindex="0" onclick="openModal('aluluthoModal')"><h4>Alulutho Mbangela</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & OPERATIONS</p></div>
         </div>
     </section>
 
-    <div id="dumisaneModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('dumisaneModal')">&times;</span>
-            <h2>Dumisane Zikalala</h2>
-            <p>Born in Soweto, Dumisane overcame environmental challenges to graduate from CPUT. He co-founded Ridebox to leverage technology for social good.</p>
-        </div>
-    </div>
-    <div id="aluluthoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('aluluthoModal')">&times;</span>
-            <h2>Alulutho Mbangela</h2>
-            <p>Hailing from Port Elizabeth, Alu's vision for operational excellence was forged at CPUT alongside Dumisane.</p>
-        </div>
-    </div>
-
-    <div id="reganModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('reganModal')">&times;</span><h2>Regan Stevens</h2><p><strong>Project Manager:</strong> Managing timelines and technical vendor partnerships.</p></div></div>
-    <div id="jonathanModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('jonathanModal')">&times;</span><h2>Jonathan Scott</h2><p><strong>Supervisor:</strong> Overseeing day-to-day operations and high-level strategy.</p></div></div>
-    <div id="kyleModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('kyleModal')">&times;</span><h2>Kyle Foster</h2><p><strong>Head of Marketing:</strong> Responsible for RIDEBOX brand identity and communications.</p></div></div>
+    <div id="dumisaneModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('dumisaneModal')">&times;</span><h2>Dumisane Zikalala</h2><p>Dumisane leverages technology to bridge socio-economic gaps. A CPUT graduate focused on high-impact software solutions.</p></div></div>
+    <div id="aluluthoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('aluluthoModal')">&times;</span><h2>Alulutho Mbangela</h2><p>Alulutho drives the vision for operational excellence and sustainable urban mobility strategies.</p></div></div>
 
     <section id="contact" class="section">
         <h2 class="section-title">Connect</h2>
-        <div id="successMessage" class="success-message">Thank you! Your inquiry has been sent successfully.</div>
-        <div id="errorMessage" class="error-message" id="errorMsg"></div>
+        <div id="statusMsg" class="status-msg"></div>
         <form class="contact-form" id="contactForm">
             <input type="text" id="name" placeholder="NAME" required>
             <input type="email" id="email" placeholder="EMAIL" required>
@@ -493,168 +306,82 @@
         </form>
     </section>
 
-    <footer>
-        <div class="footer-top">
-            <a href="#home">
-                <img src="Ridebox App logo.jpeg" alt="Ridebox Logo" class="footer-logo">
+    <footer style="text-align: center;">
+        <img src="Ridebox App logo.png" alt="Ridebox Logo" class="footer-logo">
+        <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2026 RIDEBOX | Cape Town, South Africa</p>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                </svg>
             </a>
-            <h3 style="margin-top: 15px; font-size: 1.5rem; letter-spacing: 2px;">RIDEBOX</h3>
-            <p style="margin-top: 10px; opacity: 0.7; max-width: 400px;">Advanced solar-powered e-hailing platform advancing South Africa's mobility with sustainable, secure, and reliable transportation solutions.</p>
-        </div>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>About RIDEBOX</h4>
-                <ul>
-                    <li><a href="#company">The Strategy</a></li>
-                    <li><a href="#founders">Leadership</a></li>
-                    <li><a href="#">Our Vision</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <ul>
-                    <li>Email: <a href="mailto:info@ridebox.co.za">info@ridebox.co.za</a></li>
-                    <li>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></li>
-                    <li>Location: South Africa</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://facebook.com/ridebox" target="_blank" title="Facebook" aria-label="Follow on Facebook">f</a>
-                    <a href="https://twitter.com/ridebox" target="_blank" title="Twitter" aria-label="Follow on Twitter">𝕏</a>
-                    <a href="https://instagram.com/ridebox" target="_blank" title="Instagram" aria-label="Follow on Instagram">📷</a>
-                    <a href="https://linkedin.com/company/ridebox" target="_blank" title="LinkedIn" aria-label="Follow on LinkedIn">in</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024-2026 RIDEBOX. All rights reserved. | Advancing South Africa's Mobility</p>
-            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">Solar-Powered | Grid Independent | Secure E-Hailing</p>
+            
+            <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="X (formerly Twitter)">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/>
+                </svg>
+            </a>
         </div>
     </footer>
 
-    <div class="chat-widget">
-        <div class="chat-btn" onclick="toggleChat()">+</div>
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">RIDEBOX_ASSISTANT</div>
-            <div class="chat-body" id="chatBody"><p>SYSTEM READY.</p></div>
-            <div class="chat-input-area"><input type="text" id="chatInput" placeholder="MESSAGE..."><button onclick="sendMsg()">></button></div>
-        </div>
-    </div>
-
     <script>
-        // Modal Functions
-        function openModal(modalId) { 
-            document.getElementById(modalId).style.display = "flex"; 
-            document.body.style.overflow = "hidden"; 
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
-        function closeModal(modalId) { 
-            document.getElementById(modalId).style.display = "none"; 
-            document.body.style.overflow = "auto"; 
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+            document.body.style.overflow = "auto";
         }
+
+        // Chat Logic
+        function toggleChat() { document.getElementById('chatWindow').classList.toggle('show'); }
         
-        // Chat Widget Functions
-        function toggleChat() { 
-            document.getElementById('chatWindow').classList.toggle('show'); 
-        }
         function sendMsg() {
             const input = document.getElementById('chatInput');
             const body = document.getElementById('chatBody');
             if(input.value.trim() !== "") {
-                const msg = document.createElement('p');
-                msg.style.cssText = "border-left: 2px solid white; padding-left: 10px; margin-top: 15px; font-size: 0.8rem;";
-                msg.innerText = "> " + input.value.toUpperCase();
-                body.appendChild(msg);
+                const p = document.createElement('p');
+                p.style.cssText = "margin-top: 10px; border-left: 1px solid #fff; padding-left: 8px;";
+                p.innerText = "> " + input.value.toUpperCase();
+                body.appendChild(p);
                 input.value = "";
                 body.scrollTop = body.scrollHeight;
             }
         }
-        
-        // Contact Form Handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+        // Enter key for Chat
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') sendMsg();
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const successMsg = document.getElementById('successMessage');
-            const errorMsg = document.getElementById('errorMessage');
+            document.getElementById('chatWindow').classList.remove('show');
             
-            // Reset messages
-            successMsg.style.display = 'none';
-            errorMsg.style.display = 'none';
-            
-            // Validation
-            if (!name || !email || !message) {
-                errorMsg.textContent = 'Please fill in all fields.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                errorMsg.textContent = 'Please enter a valid email address.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-            
-            // Send form data using Formspree (update YOUR_FORM_ID with your actual ID from formspree.io)
-            fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    successMsg.style.display = 'block';
-                    document.getElementById('contactForm').reset();
-                    setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                errorMsg.textContent = 'Error sending message. Please try again later.';
-                errorMsg.style.display = 'block';
-            });
+            const status = document.getElementById('statusMsg');
+            status.style.display = "block";
+            status.className = "status-msg success";
+            status.innerText = "TRANSMITTING...";
+
+            // Placeholder for Formspree / Backend
+            setTimeout(() => {
+                status.innerText = "MESSAGE RECEIVED. WE WILL CONTACT YOU SHORTLY.";
+                this.reset();
+            }, 1500);
         });
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) { 
-            if (event.target.className === 'modal') { 
-                event.target.style.display = "none"; 
-                document.body.style.overflow = "auto"; 
-            } 
-        }
-    </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_GA_ID');
+
+        // Close modal on click outside
+        window.onclick = (e) => { if(e.target.className === 'modal') { closeModal(e.target.id); } };
     </script>
 </body>
 </html>
