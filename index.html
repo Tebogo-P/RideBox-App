@@ -4,20 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RIDEBOX - Advanced solar-powered e-hailing solution in South Africa. Secure mobility with 0% grid dependency.">
-    <meta name="keywords" content="e-hailing, rideshare, solar power, South Africa, sustainable transport, mobility solution, ridebox, uber alternative, load shedding
-     ">
+    <meta name="keywords" content="e-hailing, rideshare, solar power, South Africa, sustainable transport, mobility solution, ridebox, uber alternative, load shedding">
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://ridebox.co.za/">
-    
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ridebox.co.za/">
     <meta property="og:title" content="RIDEBOX | Solar-Powered E-Hailing">
     <meta property="og:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
-    <meta property="og:image" content="https://drive.google.com/thumbnail?id=1rSd-4CgbI3BL2h7R182LSqMxhOZIcCVW&sz=w1200">
-    
-    <link rel="icon" type="image/png" href="Ridebox App logo.png">
+    <meta property="og:image" content="https://ridebox.co.za/ridebox-logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="RIDEBOX | Solar-Powered E-Hailing">
+    <meta name="twitter:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
+    <meta name="twitter:image" content="https://ridebox.co.za/ridebox-logo.png">
+
+    <link rel="icon" type="image/png" href="ridebox-logo.png">
+    <link rel="apple-touch-icon" href="ridebox-logo.png">
     <title>RIDEBOX | Solar-Powered E-Hailing</title>
-    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RideBox",
+        "url": "https://ridebox.co.za",
+        "logo": "https://ridebox.co.za/ridebox-logo.png",
+        "description": "Advanced solar-powered e-hailing solution in South Africa with 0% grid dependency.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cape Town",
+            "addressCountry": "ZA"
+        },
+        "founder": [
+            { "@type": "Person", "name": "Dumisane Zikalala", "jobTitle": "Co-Founder & Tech Lead" },
+            { "@type": "Person", "name": "Alulutho Mbangela", "jobTitle": "Co-Founder & Operations" }
+        ]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #000000;
@@ -71,7 +99,7 @@
             width: auto;
             transition: transform 0.3s;
         }
-        
+
         .logo-container a:hover .company-logo { transform: scale(1.05); }
 
         .logo-text {
@@ -92,6 +120,35 @@
             transition: opacity 0.3s;
         }
         .nav-links li a:hover { opacity: 0.6; }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .hamburger[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         /* Hero */
         .hero {
@@ -146,12 +203,12 @@
             background: rgba(0,0,0,0.5);
         }
 
-        .card:hover, .card:focus { 
-            background: var(--text-color); 
-            color: var(--bg-color); 
+        .card:hover, .card:focus {
+            background: var(--text-color);
+            color: var(--bg-color);
             outline: none;
         }
-        
+
         .card h3 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 900; transition: transform 0.3s; }
         .card:hover h3 { transform: scale(1.05); }
 
@@ -181,7 +238,7 @@
             overflow-y: auto;
         }
 
-        .close-btn { position: absolute; top: 15px; right: 25px; color: var(--text-color); font-size: 30px; cursor: pointer; transition: transform 0.3s; }
+        .close-btn { position: absolute; top: 15px; right: 25px; color: var(--text-color); font-size: 30px; cursor: pointer; transition: transform 0.3s; background: none; border: none; }
         .close-btn:hover { transform: scale(1.2); }
         .modal h2 { text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
         .modal p { margin-bottom: 20px; font-size: 1rem; opacity: 0.9; }
@@ -190,29 +247,31 @@
         /* Contact Section with Background Image */
         #contact {
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('map-background.png');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('map-background-optimized.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
         .contact-form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; position: relative; z-index: 2; }
-        .contact-form input, .contact-form textarea { 
-            padding: 18px; 
-            border: 1px solid var(--border-color); 
-            background: rgba(0,0,0,0.6); 
-            color: white; 
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.8; }
+        .contact-form input, .contact-form textarea {
+            padding: 18px;
+            border: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.6);
+            color: white;
             font-size: 1rem;
             backdrop-filter: blur(2px);
         }
-        .btn { 
-            background: var(--text-color); 
-            color: var(--bg-color); 
-            padding: 20px; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            border: none; 
-            cursor: pointer; 
+        .btn {
+            background: var(--text-color);
+            color: var(--bg-color);
+            padding: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s;
         }
         .btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); }
@@ -226,9 +285,9 @@
         footer { padding: 80px 10% 40px; border-top: 1px solid var(--border-color); background: var(--bg-color); position: relative; z-index: 2;}
         .footer-logo { height: 50px; margin-bottom: 20px; }
         .social-links { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
-        .social-links a { 
-            width: 40px; height: 40px; border: 1px solid var(--border-color); 
-            display: flex; align-items: center; justify-content: center; 
+        .social-links a {
+            width: 40px; height: 40px; border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
             text-decoration: none; color: var(--text-color); transition: 0.3s;
         }
         .social-links a:hover { background: white; color: black; transform: translateY(-3px); }
@@ -239,7 +298,20 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-color);
+                border-bottom: 1px solid var(--border-color);
+                padding: 20px 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li a { margin-left: 0; display: block; padding: 12px 8%; }
+            .hamburger { display: flex; }
             .hero h1 { font-size: 3.5rem; }
             .section { padding: 60px 5%; }
             #contact { background-attachment: scroll; }
@@ -248,14 +320,19 @@
 </head>
 <body>
 
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="logo-container">
             <a href="#home">
-                <img src="Ridebox App logo.png" alt="Ridebox Logo" class="company-logo">
+                <img src="ridebox-logo.png" alt="Ridebox Logo" class="company-logo" width="45" height="45">
                 <div class="logo-text">RIDEBOX</div>
             </a>
         </div>
-        <ul class="nav-links">
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#company">Venture</a></li>
             <li><a href="#founders">Leadership</a></li>
@@ -264,77 +341,88 @@
     </nav>
 
     <header id="home" class="hero">
-        <img src="Ridebox App logo.png" alt="Ridebox Logo" class="hero-logo">
+        <img src="ridebox-logo.png" alt="Ridebox Logo" class="hero-logo" width="120" height="120">
         <h1>RIDEBOX</h1>
         <p>ADVANCING SOUTH AFRICA'S MOBILITY</p>
         <div class="video-container">
-            <iframe src="https://drive.google.com/file/d/1DRkmqldcTKmXM-sZLWHh-vBAiIH69T1o/preview" title="Ridebox Video Presentation" allowfullscreen></iframe>
+            <iframe src="https://drive.google.com/file/d/1DRkmqldcTKmXM-sZLWHh-vBAiIH69T1o/preview" title="Ridebox Video Presentation" allowfullscreen loading="lazy"></iframe>
         </div>
     </header>
 
     <section id="company" class="section">
         <h2 class="section-title">The Strategy</h2>
         <div class="grid">
-            <div class="card" role="button" tabindex="0" onclick="openModal('unitsModal')"><h3>21</h3><p>UNITS NATIONWIDE</p></div>
-            <div class="card" role="button" tabindex="0" onclick="openModal('gridModal')"><h3>0%</h3><p>GRID DEPENDENCY</p></div>
-            <div class="card" role="button" tabindex="0" onclick="openModal('secureModal')"><h3>SECURE</h3><p>E-HAILING ACCESS</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('unitsModal')" onkeydown="if(event.key==='Enter')openModal('unitsModal')"><h3>21</h3><p>UNITS NATIONWIDE</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('gridModal')" onkeydown="if(event.key==='Enter')openModal('gridModal')"><h3>0%</h3><p>GRID DEPENDENCY</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('secureModal')" onkeydown="if(event.key==='Enter')openModal('secureModal')"><h3>SECURE</h3><p>E-HAILING ACCESS</p></div>
         </div>
     </section>
 
-    <div id="unitsModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('unitsModal')">&times;</span><h2>National Deployment</h2><p>Our pilot program targets high-traffic hubs to solve accessibility gaps:</p><ul><li><strong>Airport Connectivity:</strong> Support for travelers without power or local connectivity.</li><li><strong>Tourist Protection:</strong> Regulated rates and safety.</li><li><strong>Public Hubs:</strong> Centralized booking at malls and universities.</li></ul></div></div>
-    <div id="gridModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('gridModal')">&times;</span><h2>0% Grid Dependency</h2><p>Engineered with built-in solar arrays to remain 100% operational during load shedding and infrastructure failure.</p></div></div>
-    <div id="secureModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('secureModal')">&times;</span><h2>Secure Access</h2><p>Vetted driver platforms and integrated emergency response features for peace of mind.</p></div></div>
+    <div id="unitsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="unitsModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('unitsModal')" aria-label="Close dialog">&times;</button><h2 id="unitsModalTitle">National Deployment</h2><p>Our pilot program targets high-traffic hubs to solve accessibility gaps:</p><ul><li><strong>Airport Connectivity:</strong> Support for travelers without power or local connectivity.</li><li><strong>Tourist Protection:</strong> Regulated rates and safety.</li><li><strong>Public Hubs:</strong> Centralized booking at malls and universities.</li></ul></div></div>
+    <div id="gridModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="gridModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('gridModal')" aria-label="Close dialog">&times;</button><h2 id="gridModalTitle">0% Grid Dependency</h2><p>Engineered with built-in solar arrays to remain 100% operational during load shedding and infrastructure failure.</p></div></div>
+    <div id="secureModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="secureModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('secureModal')" aria-label="Close dialog">&times;</button><h2 id="secureModalTitle">Secure Access</h2><p>Vetted driver platforms and integrated emergency response features for peace of mind.</p></div></div>
 
     <section id="founders" class="section">
         <h2 class="section-title">Leadership</h2>
         <div class="grid">
-            <div class="card" role="button" tabindex="0" onclick="openModal('dumisaneModal')"><h4>Dumisane Zikalala</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & TECH LEAD</p></div>
-            <div class="card" role="button" tabindex="0" onclick="openModal('aluluthoModal')"><h4>Alulutho Mbangela</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & OPERATIONS</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('dumisaneModal')" onkeydown="if(event.key==='Enter')openModal('dumisaneModal')"><h4>Dumisane Zikalala</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & TECH LEAD</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('aluluthoModal')" onkeydown="if(event.key==='Enter')openModal('aluluthoModal')"><h4>Alulutho Mbangela</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & OPERATIONS</p></div>
         </div>
-        
+
         <h3 class="sub-heading">Core Team Members</h3>
         <div class="grid">
-            <div class="card" role="button" tabindex="0" onclick="openModal('reganModal')"><h4>Regan Stevens</h4><p style="opacity: 0.6; font-size: 0.8rem;">PROJECT MANAGER</p></div>
-            <div class="card" role="button" tabindex="0" onclick="openModal('jonathanModal')"><h4>Jonathan Scott</h4><p style="opacity: 0.6; font-size: 0.8rem;">SUPERVISOR</p></div>
-            <div class="card" role="button" tabindex="0" onclick="openModal('kyleModal')"><h4>Kyle Foster</h4><p style="opacity: 0.6; font-size: 0.8rem;">HEAD OF MARKETING</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('reganModal')" onkeydown="if(event.key==='Enter')openModal('reganModal')"><h4>Regan Stevens</h4><p style="opacity: 0.6; font-size: 0.8rem;">PROJECT MANAGER</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('jonathanModal')" onkeydown="if(event.key==='Enter')openModal('jonathanModal')"><h4>Jonathan Scott</h4><p style="opacity: 0.6; font-size: 0.8rem;">SUPERVISOR</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('kyleModal')" onkeydown="if(event.key==='Enter')openModal('kyleModal')"><h4>Kyle Foster</h4><p style="opacity: 0.6; font-size: 0.8rem;">HEAD OF MARKETING</p></div>
         </div>
     </section>
 
-    <div id="dumisaneModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('dumisaneModal')">&times;</span><h2>Dumisane Zikalala</h2><p>Born in Soweto, Dumisane overcame environmental challenges to graduate from CPUT. He co-founded Ridebox to leverage technology for social good.</p></div></div>
-    <div id="aluluthoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('aluluthoModal')">&times;</span><h2>Alulutho Mbangela</h2><p>Hailing from Port Elizabeth, Alu's vision for operational excellence was forged at CPUT alongside Dumisane.</p></div></div>
-    
-    <div id="reganModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('reganModal')">&times;</span><h2>Regan Stevens</h2><p><strong>Project Manager:</strong> Managing timelines and technical vendor partnerships.</p></div></div>
-    <div id="jonathanModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('jonathanModal')">&times;</span><h2>Jonathan Scott</h2><p><strong>Supervisor:</strong> Overseeing day-to-day operations and high-level strategy.</p></div></div>
-    <div id="kyleModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('kyleModal')">&times;</span><h2>Kyle Foster</h2><p><strong>Head of Marketing:</strong> Responsible for RIDEBOX brand identity and communications.</p></div></div>
+    <div id="dumisaneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="dumisaneModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('dumisaneModal')" aria-label="Close dialog">&times;</button><h2 id="dumisaneModalTitle">Dumisane Zikalala</h2><p>Born in Soweto, Dumisane overcame environmental challenges to graduate from CPUT. He co-founded Ridebox to leverage technology for social good.</p></div></div>
+    <div id="aluluthoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="aluluthoModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('aluluthoModal')" aria-label="Close dialog">&times;</button><h2 id="aluluthoModalTitle">Alulutho Mbangela</h2><p>Hailing from Port Elizabeth, Alu's vision for operational excellence was forged at CPUT alongside Dumisane.</p></div></div>
+
+    <div id="reganModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reganModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('reganModal')" aria-label="Close dialog">&times;</button><h2 id="reganModalTitle">Regan Stevens</h2><p><strong>Project Manager:</strong> Managing timelines and technical vendor partnerships.</p></div></div>
+    <div id="jonathanModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="jonathanModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('jonathanModal')" aria-label="Close dialog">&times;</button><h2 id="jonathanModalTitle">Jonathan Scott</h2><p><strong>Supervisor:</strong> Overseeing day-to-day operations and high-level strategy.</p></div></div>
+    <div id="kyleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="kyleModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('kyleModal')" aria-label="Close dialog">&times;</button><h2 id="kyleModalTitle">Kyle Foster</h2><p><strong>Head of Marketing:</strong> Responsible for RIDEBOX brand identity and communications.</p></div></div>
 
     <section id="contact" class="section">
         <h2 class="section-title">Connect</h2>
-        <div id="statusMsg" class="status-msg"></div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xaqlypkd" method="POST">
-            <input type="text" id="name" name="name" placeholder="NAME" required>
-            <input type="email" id="email" name="email" placeholder="EMAIL" required>
-            <textarea id="message" name="message" placeholder="MESSAGE" rows="5" required></textarea>
+        <div id="statusMsg" class="status-msg" role="alert"></div>
+        <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+            </div>
             <button type="submit" class="btn">Send Inquiry</button>
         </form>
     </section>
 
     <footer style="text-align: center;">
-        <img src="Ridebox App logo.png" alt="Ridebox Logo" class="footer-logo">
+        <img src="ridebox-logo.png" alt="Ridebox Logo" class="footer-logo" width="50" height="50" loading="lazy">
         <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2025 RIDEBOX | Cape Town, South Africa</p>
-        
+
         <div class="social-links">
-            <a href="#" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
                     <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
                 </svg>
             </a>
-            <a href="#" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
             </a>
-            <a href="#" aria-label="X">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/>
                 </svg>
             </a>
@@ -342,37 +430,83 @@
     </footer>
 
     <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Modal functions with focus trapping
+        var lastFocusedElement = null;
+
         function openModal(id) {
-            document.getElementById(id).style.display = "flex";
+            lastFocusedElement = document.activeElement;
+            var modal = document.getElementById(id);
+            modal.style.display = "flex";
             document.body.style.overflow = "hidden";
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = "auto";
+            var closeBtn = modal.querySelector('.close-btn');
+            if (closeBtn) closeBtn.focus();
+            modal.addEventListener('keydown', trapFocus);
         }
 
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+            modal.removeEventListener('keydown', trapFocus);
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        function trapFocus(e) {
+            if (e.key === 'Escape') {
+                closeModal(e.currentTarget.id);
+                return;
+            }
+            if (e.key !== 'Tab') return;
+            var modal = e.currentTarget;
+            var focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) { last.focus(); e.preventDefault(); }
+            } else {
+                if (document.activeElement === last) { first.focus(); e.preventDefault(); }
+            }
+        }
+
+        // Netlify Forms AJAX submission
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault(); 
-            
-            const form = e.target;
-            const status = document.getElementById('statusMsg');
-            
+            e.preventDefault();
+
+            var form = e.target;
+            var status = document.getElementById('statusMsg');
+
             status.style.display = "block";
             status.className = "status-msg success";
             status.innerText = "TRANSMITTING...";
 
-            const data = new FormData(form);
-
             try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
+                var response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
                 });
 
                 if (response.ok) {
                     status.innerText = "MESSAGE RECEIVED. WE WILL CONTACT YOU SHORTLY.";
-                    form.reset(); // Clear the form
+                    form.reset();
                 } else {
                     status.className = "status-msg error";
                     status.innerText = "ERROR SENDING MESSAGE. PLEASE TRY AGAIN.";
@@ -383,7 +517,8 @@
             }
         });
 
-        window.onclick = (e) => { if(e.target.className === 'modal') { closeModal(e.target.id); } };
+        // Close modal on backdrop click
+        window.onclick = function(e) { if(e.target.classList.contains('modal')) { closeModal(e.target.id); } };
     </script>
 </body>
 </html>
